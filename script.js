@@ -35,8 +35,6 @@ buildBtn.addEventListener('click', function () {
         }
     }
 
-    let matrixInputs = document.querySelectorAll('.matrix_item');
-
     transposeBtn.addEventListener('click', function () {
         let k = 0;
 
@@ -44,18 +42,10 @@ buildBtn.addEventListener('click', function () {
             document.querySelector('.transpose_matrix').remove();
         }
 
-        for (let i = 0; i < strings; i++) {
-            for (let j = 0; j < columns; j++) {
-                matrixArr[i][j] = +matrixInputs[k].value;
-                k++;
-            }
-        }
-        k = 0;
-
         for (let j = 0; j < columns; j++) {
             transposeMatrixArr[j] = [];
             for (let i = 0; i < strings; i++) {
-                transposeMatrixArr[j][i] = matrixArr[i][j];
+                transposeMatrixArr[j][i] = +(matrixArr[i][j].value);
             }
         }
 
